@@ -29,7 +29,7 @@ static void decay_position(CGFloat *x, CGFloat *v, NSUInteger count, CFTimeInter
 
   // x0 = x;
   // x = x0 + v0 * deceleration * (1 - powf(deceleration, dt)) / (1 - deceleration)
-  float v0[count];
+  std::vector<float> v0(count);
   float kv = powf(deceleration, dt);
   float kx = deceleration * (1 - kv) / (1 - deceleration);
 
